@@ -9,6 +9,14 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
+        name: `data`,
+        path: `${__dirname}/data`
+      }
+    },
+
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `blog`,
         path: `${__dirname}/blog`
       }
@@ -28,6 +36,13 @@ module.exports = {
          * if false, this plugin will not use <ColorModeProvider />
          */
         isUsingColorMode: true
+      }
+    },
+    {
+      resolve: 'gatsby-remark-external-links',
+      options: {
+        target: '_blank',
+        rel: 'nofollow'
       }
     }
   ]

@@ -1,13 +1,8 @@
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { Box } from '@chakra-ui/react'
+import { useStaticQuery, graphql } from 'gatsby'
 import * as React from 'react'
-import {
-  container,
-  heading,
-  navLinks,
-  navLinkItem,
-  navLinkText,
-  siteTitle
-} from './layout.module.css'
+import NavBar from './Navbar'
+import './layout.css'
 
 const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
@@ -20,35 +15,13 @@ const Layout = ({ pageTitle, children }) => {
     }
   `)
   return (
-    <div className={container}>
+    <Box bgColor={'gray.900'} color='whiteAlpha.900' minH='100vh'>
       <title>
         {pageTitle} | {data.site.siteMetadata.title}
       </title>
-      <header className={siteTitle}>{data.site.siteMetadata.title}</header>
-      <nav>
-        <ul className={navLinks}>
-          <li className={navLinkItem}>
-            <Link to='/' className={navLinkText}>
-              Home
-            </Link>
-          </li>
-          <li className={navLinkItem}>
-            <Link to='/about' className={navLinkText}>
-              About
-            </Link>
-          </li>
-          <li className={navLinkItem}>
-            <Link to='/blog' className={navLinkText}>
-              Blog
-            </Link>
-          </li>
-        </ul>
-      </nav>
-      <main>
-        <h1 className={heading}>{pageTitle}</h1>
-        {children}
-      </main>
-    </div>
+      <NavBar />
+      <main>{children}</main>
+    </Box>
   )
 }
 export default Layout
