@@ -1,4 +1,14 @@
-import { Container, Flex, Heading, List, ListIcon, ListItem, Stack, Text } from '@chakra-ui/react'
+import {
+  Container,
+  Flex,
+  Heading,
+  Link,
+  List,
+  ListIcon,
+  ListItem,
+  Stack,
+  Text
+} from '@chakra-ui/react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import React from 'react'
@@ -44,10 +54,7 @@ export const AboutMe = () => {
             }
           }
           img_alt
-          number
-          title
         }
-        body
       }
     }
   `)
@@ -82,7 +89,7 @@ export const AboutMe = () => {
                     color={'pink.400'}
                     fontFamily={'monospace'}
                   >
-                    {aboutMe.frontmatter.number}.
+                    01.
                   </Text>
                   <Heading
                     as='h2'
@@ -91,7 +98,7 @@ export const AboutMe = () => {
                     fontSize={{ base: '2xl', lg: '3xl' }}
                     color={'white'}
                   >
-                    {aboutMe.frontmatter.title}
+                    About Me
                   </Heading>
                 </Flex>
                 <hr style={{ flexGrow: '1' }} />
@@ -106,7 +113,41 @@ export const AboutMe = () => {
                 as={'div'}
                 className='text-body-container'
               >
-                <MDXRenderer>{aboutMe.body}</MDXRenderer>
+                <Text>
+                  Hello! My name is Franco and I enjoy creating solutions that live on the web. My
+                  interest in web development started in 2018 when I decided to try, out of
+                  curiosity, to create my first website. I really enjoy the road traveled, designs,
+                  architectures, technologies!
+                </Text>
+                <Text>
+                  Fast forward to today, and I had the privilege of working on{' '}
+                  <Text as='b'>a project for my country's government </Text> and then for{' '}
+                  <Link href='https://gitcordoba.com' isExternal title='I worked in this company'>
+                    a tourism company
+                  </Link>{' '}
+                  (always talking about systems and development). My main focus these days is
+                  creating accessible and inclusive products and digital experiences at{' '}
+                  <Link href='https://bitlogic.io' isExternal title='I work in this company'>
+                    Bitlogic
+                  </Link>{' '}
+                  for a variety of clients.
+                </Text>
+                <Text>
+                  Also, I am <Text as='b'>teaching front-end web development</Text> for 1 year as a
+                  tutor at the{' '}
+                  <Link href='https://www.coderhouse.com' isExternal title='I work in this company'>
+                    coderhouse academy
+                  </Link>
+                  .
+                </Text>
+                <Text>
+                  I am a self-taught person who likes to learn a lot and{' '}
+                  <Text as='b'>I enjoy what I do</Text>.
+                </Text>
+                <Text>
+                  Here are <Text as={'b'}>some</Text> technologies I've been working with recently:
+                </Text>
+                {/* <MDXRenderer>{aboutMe.body}</MDXRenderer> */}
               </Text>
 
               <List display='grid' ps={3} gridTemplateColumns={'1fr 1fr'}>
