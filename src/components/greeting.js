@@ -8,10 +8,16 @@ const colors = ['#ED64A6', '#00B5D8', '#9F7AEA']
 export const Greeting = () => {
   useEffect(() => {
     consoleText(dataAnimationText, 'text', colors)
-  }, [])
+    return () => {
+      const interval_id = window.setInterval(function () {}, 1000)
 
+      for (let i = 1; i < interval_id; i++) {
+        window.clearInterval(i)
+      }
+    }
+  }, [])
   return (
-    <Container maxWidth={'5xl'} pt={{ base: 10, md: 0 }}>
+    <Container maxWidth={'5xl'} pt={{ base: 10, md: 0 }} id='greeting-container'>
       <Flex
         align={{ base: 'flex-start', md: 'center' }}
         justify={{ base: 'flex-start', md: 'center' }}
@@ -46,7 +52,7 @@ export const Greeting = () => {
             </Box>
             <Heading
               as='h1'
-              fontSize={{ base: '4xl', md: '5xl', xl: '6xl' }}
+              fontSize={{ base: '4xl', md: '5xl', '2xl': '6xl' }}
               mt={4}
               color={'white'}
             >
@@ -54,7 +60,7 @@ export const Greeting = () => {
             </Heading>
             <Heading
               as='h2'
-              fontSize={{ base: '4xl', md: '5xl', xl: '6xl' }}
+              fontSize={{ base: '4xl', md: '5xl', '2xl': '6xl' }}
               mt={4}
               color={'whiteAlpha.700'}
             >
@@ -83,10 +89,10 @@ export const Greeting = () => {
               colorScheme='pink'
               color={'pink.400'}
               variant='outline'
-              mt={5}
-              size='md'
+              mt={10}
+              size='lg'
               fontFamily={'monospace'}
-              maxWidth={'sm'}
+              maxWidth={'xs'}
               as={'a'}
               href='#about-me'
             >

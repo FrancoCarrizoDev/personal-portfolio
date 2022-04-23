@@ -33,7 +33,7 @@ export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure()
 
   return (
-    <Box pos='fixed' w={'100%'}>
+    <Box pos='fixed' w={'100%'} id='navbar-container'>
       <Container maxWidth={'10xl'}>
         <Flex color='white' minH={'60px'} align={'center'} pt={'4'} px={'2'}>
           <Flex
@@ -78,7 +78,7 @@ const DesktopNav = () => {
   return (
     <Stack direction={'row'} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
-        <Flex p={2} key={navItem.label}>
+        <Flex p={2} key={navItem.label} id={`nav-${navItem.number}`}>
           <Text fontSize={'xs'} fontFamily={'monospace'} color={'pink.400'} me={1}>
             {navItem.number}.
           </Text>

@@ -10,7 +10,6 @@ import {
   Text
 } from '@chakra-ui/react'
 import { graphql, useStaticQuery } from 'gatsby'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
 import React from 'react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import './about-me.css'
@@ -62,7 +61,7 @@ export const AboutMe = () => {
 
   return (
     // TODO quitar ese 100vh
-    <Container maxWidth={'5xl'} pt={{ base: 10, md: 0 }} minH={'100vh'}>
+    <Container maxWidth={'5xl'} pt={{ base: 10, md: 0 }} mb={10} pb={10} id='about-me-container'>
       <Stack direction={{ base: 'column', md: 'row' }} align={'center'}>
         <Flex
           align={{ base: 'flex-start', md: 'center' }}
@@ -147,7 +146,6 @@ export const AboutMe = () => {
                 <Text>
                   Here are <Text as={'b'}>some</Text> technologies I've been working with recently:
                 </Text>
-                {/* <MDXRenderer>{aboutMe.body}</MDXRenderer> */}
               </Text>
 
               <List display='grid' ps={3} gridTemplateColumns={'1fr 1fr'}>

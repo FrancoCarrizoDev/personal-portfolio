@@ -14,6 +14,7 @@ const Layout = ({ pageTitle, children }) => {
       }
     }
   `)
+
   return (
     <Box bgColor={'gray.900'} color='whiteAlpha.900' minH='100vh'>
       <title>
