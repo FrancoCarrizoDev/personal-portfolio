@@ -9,9 +9,9 @@ import {
   Stack,
   Text
 } from '@chakra-ui/react'
-import { graphql, useStaticQuery } from 'gatsby'
+
 import React from 'react'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { StaticImage } from 'gatsby-plugin-image'
 import './about-me.css'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 
@@ -43,22 +43,6 @@ const myTechnologies = [
 ]
 
 export const AboutMe = () => {
-  const { mdx: aboutMe } = useStaticQuery(graphql`
-    query {
-      mdx(fileAbsolutePath: { regex: "/data/about-me/" }) {
-        frontmatter {
-          img {
-            childImageSharp {
-              gatsbyImageData(width: 320, placeholder: BLURRED, quality: 100)
-            }
-          }
-          img_alt
-        }
-      }
-    }
-  `)
-  const image = getImage(aboutMe.frontmatter.img)
-
   return (
     // TODO quitar ese 100vh
     <Container maxWidth={'5xl'} pt={{ base: 10, md: 0 }} mb={10} pb={10} id='about-me-container'>
@@ -160,12 +144,14 @@ export const AboutMe = () => {
           </Flex>
         </Flex>
         <Flex flex={1} justify={{ base: 'center', lg: 'end' }} align='center' style={{ margin: 0 }}>
-          <GatsbyImage
-            image={image}
-            alt={aboutMe.frontmatter.img_alt}
+          <StaticImage
+            src='../images/my-photo.jpg'
+            alt='My personal photo'
             placeholder='blurred'
             layout='fixed'
             className='about-me-img'
+            width={300}
+            height={300}
           />
         </Flex>
       </Stack>

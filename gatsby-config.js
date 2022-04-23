@@ -6,22 +6,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: `data`,
-        path: `${__dirname}/data`
-      }
-    },
 
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `blog`,
-        path: `${__dirname}/blog`
-      }
-    },
-    'gatsby-plugin-mdx',
     'gatsby-transformer-sharp',
     {
       resolve: '@chakra-ui/gatsby-plugin',
@@ -39,10 +24,9 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-remark-external-links',
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        target: '_blank',
-        rel: 'nofollow'
+        icon: 'src/images/favicon.ico'
       }
     }
   ]

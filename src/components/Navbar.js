@@ -13,6 +13,7 @@ import {
 } from '@chakra-ui/react'
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 import React from 'react'
+import { Fade } from 'react-awesome-reveal'
 
 const icon = () => (
   <svg width='25px' height='25px' viewBox='0 0 24 24' version='1.1'>
@@ -49,17 +50,18 @@ export default function WithSubnavigation() {
             />
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: 'end', md: 'start' }}>
-            <Text
-              textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-              fontFamily={'heading'}
-              border={'1px'}
-              borderColor='pink.400'
-              borderRadius={'md'}
-              p={1}
-            >
-              <Icon as={icon} />
-            </Text>
-
+            <Fade>
+              <Text
+                textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
+                fontFamily={'heading'}
+                border={'1px'}
+                borderColor='pink.400'
+                borderRadius={'md'}
+                p={1}
+              >
+                <Icon as={icon} />
+              </Text>
+            </Fade>
             <Flex display={{ base: 'none', md: 'flex' }} width='100%' justifyContent='end' ml={10}>
               <DesktopNav />
             </Flex>
@@ -77,27 +79,29 @@ export default function WithSubnavigation() {
 const DesktopNav = () => {
   return (
     <Stack direction={'row'} spacing={4}>
-      {NAV_ITEMS.map((navItem) => (
-        <Flex p={2} key={navItem.label} id={`nav-${navItem.number}`}>
-          <Text fontSize={'xs'} fontFamily={'monospace'} color={'pink.400'} me={1}>
-            {navItem.number}.
-          </Text>
+      <Fade cascade>
+        {NAV_ITEMS.map((navItem) => (
+          <Flex p={2} key={navItem.label} id={`nav-${navItem.number}`}>
+            <Text fontSize={'xs'} fontFamily={'monospace'} color={'pink.400'} me={1}>
+              {navItem.number}.
+            </Text>
 
-          <Link
-            href={navItem.href ?? '#'}
-            fontSize={'xs'}
-            fontWeight={500}
-            fontFamily={'monospace'}
-            color={'white'}
-            _hover={{
-              textDecoration: 'none',
-              color: 'pink.400'
-            }}
-          >
-            {navItem.label}
-          </Link>
-        </Flex>
-      ))}
+            <Link
+              href={navItem.href ?? '#'}
+              fontSize={'xs'}
+              fontWeight={500}
+              fontFamily={'monospace'}
+              color={'white'}
+              _hover={{
+                textDecoration: 'none',
+                color: 'pink.400'
+              }}
+            >
+              {navItem.label}
+            </Link>
+          </Flex>
+        ))}
+      </Fade>
     </Stack>
   )
 }
