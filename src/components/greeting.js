@@ -43,7 +43,7 @@ export const Greeting = () => {
                 id='text'
                 as={'span'}
                 color={'pink.400'}
-                fontFamily={'monospace'}
+                fontFamily={'Roboto Mono'}
                 fontSize={{ base: 'md', md: '18px' }}
               />
               <Box className='console-underscore' id='console' as={'div'}>
@@ -91,10 +91,11 @@ export const Greeting = () => {
               variant='outline'
               mt={10}
               size='lg'
-              fontFamily={'monospace'}
+              fontFamily={'Roboto Mono'}
               maxWidth={'xs'}
               as={'a'}
               href='#about-me'
+              zIndex={0}
             >
               <Text fontWeight={'normal'} fontSize={'md'}>
                 About me !

@@ -21,7 +21,7 @@ const Layout = ({ pageTitle, children }) => {
         {pageTitle} | {data.site.siteMetadata.title}
       </title>
       <NavBar />
-      <main>{children}</main>
+      <main id='main'>{children}</main>
     </Box>
   )
 }

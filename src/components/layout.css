@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
 html {
   scroll-behavior: smooth;
 }
@@ -25,12 +27,15 @@ strong {
   color: rgb(215, 215, 215)
 }
 
+hr{
+ border-color: rgba(255, 255, 255, 0.64);
+}
 
 .hidden {
   opacity:0;
 }
 .console-container {
-  font-family: monospace;
+  font-family: 'Roboto Mono';
   font-size:16px;
   display:block;
   color: #4299E1;
@@ -43,7 +48,7 @@ p{
   word-spacing: .5px
 }
 
-.greeting-body-container a, .text-body-container a {
+#main a{
   color: #ED64A6;
   background: 
     linear-gradient(to right, #ED64A6, #ED64A6),
@@ -54,8 +59,21 @@ p{
   transition: background-size 400ms;
 }
 
-.greeting-body-container a:hover, .text-body-container a:hover, .text-body-container a:focus,
-.greeting-body-container a:focus {
+#main a:hover,
+#main a:focus {
   background-size: 0 0.1rem, 100% 0.1rem;
   text-decoration: none !important;
 }
+
+.chakra-tabs button:focus{
+  box-shadow: none;
+  background-color: #1A202C;
+  border-inline-start: 2px solid;
+  border-inline-start-width: 2px;
+  border-inline-start-style: solid;
+  border-inline-start-color: initial;
+  border-color:#ED64A6;
+  transition: all 1000ms;
+  color: #ED64A6
+}
+

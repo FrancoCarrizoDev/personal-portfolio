@@ -9,11 +9,13 @@ import {
   Link,
   useBreakpointValue,
   useDisclosure,
-  Container
+  Container,
+  ScaleFade
 } from '@chakra-ui/react'
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 import React from 'react'
 import { Fade } from 'react-awesome-reveal'
+import { useScrollPosition } from '../hooks/useScrollPosition'
 
 const icon = () => (
   <svg width='25px' height='25px' viewBox='0 0 24 24' version='1.1'>
@@ -31,44 +33,59 @@ const icon = () => (
 )
 
 export default function WithSubnavigation() {
+  const { scrolling, scrollTop } = useScrollPosition()
+
   const { isOpen, onToggle } = useDisclosure()
 
   return (
-    <Box pos='fixed' w={'100%'} id='navbar-container'>
-      <Container maxWidth={'10xl'}>
-        <Flex color='white' minH={'60px'} align={'center'} pt={'4'} px={'2'}>
-          <Flex
-            flex={{ base: 1, md: 'auto' }}
-            ml={{ base: -2 }}
-            display={{ base: 'flex', md: 'none' }}
-          >
-            <IconButton
-              onClick={onToggle}
-              icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={6} h={6} />}
-              variant={'ghost'}
-              aria-label={'Toggle Navigation'}
-            />
-          </Flex>
-          <Flex flex={{ base: 1 }} justify={{ base: 'end', md: 'start' }}>
-            <Fade>
-              <Text
-                textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-                fontFamily={'heading'}
-                border={'1px'}
-                borderColor='pink.400'
-                borderRadius={'md'}
-                p={1}
+    <Box
+      pos='fixed'
+      w={'100%'}
+      id='navbar-container'
+      bg={(scrolling && scrollTop !== 0) || isOpen ? '#0c0e13' : 'transparent'}
+      transition={'all 300ms'}
+      zIndex={1}
+    >
+      <ScaleFade in={scrolling || scrollTop === 0 || isOpen}>
+        <Container maxWidth={'10xl'}>
+          <Flex color='white' minH={'60px'} align={'center'} py={'4'} px={'2'}>
+            <Flex
+              flex={{ base: 1, md: 'auto' }}
+              ml={{ base: -2 }}
+              display={{ base: 'flex', md: 'none' }}
+            >
+              <IconButton
+                onClick={onToggle}
+                icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={6} h={6} />}
+                variant={'ghost'}
+                aria-label={'Toggle Navigation'}
+              />
+            </Flex>
+            <Flex flex={{ base: 1 }} justify={{ base: 'end', md: 'start' }}>
+              <Fade>
+                <Text
+                  textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
+                  fontFamily={'heading'}
+                  border={'1px'}
+                  borderColor='pink.400'
+                  borderRadius={'md'}
+                  p={1}
+                >
+                  <Icon as={icon} />
+                </Text>
+              </Fade>
+              <Flex
+                display={{ base: 'none', md: 'flex' }}
+                width='100%'
+                justifyContent='end'
+                ml={10}
               >
-                <Icon as={icon} />
-              </Text>
-            </Fade>
-            <Flex display={{ base: 'none', md: 'flex' }} width='100%' justifyContent='end' ml={10}>
-              <DesktopNav />
+                <DesktopNav />
+              </Flex>
             </Flex>
           </Flex>
-        </Flex>
-      </Container>
-
+        </Container>
+      </ScaleFade>
       <Collapse in={isOpen} animateOpacity>
         <MobileNav />
       </Collapse>
@@ -82,15 +99,15 @@ const DesktopNav = () => {
       <Fade cascade>
         {NAV_ITEMS.map((navItem) => (
           <Flex p={2} key={navItem.label} id={`nav-${navItem.number}`}>
-            <Text fontSize={'xs'} fontFamily={'monospace'} color={'pink.400'} me={1}>
+            <Text fontSize={'sm'} fontFamily={'Roboto Mono'} color={'pink.400'} me={1}>
               {navItem.number}.
             </Text>
 
             <Link
               href={navItem.href ?? '#'}
-              fontSize={'xs'}
+              fontSize={'sm'}
               fontWeight={500}
-              fontFamily={'monospace'}
+              fontFamily={'Roboto Mono'}
               color={'white'}
               _hover={{
                 textDecoration: 'none',
@@ -108,7 +125,7 @@ const DesktopNav = () => {
 
 const MobileNav = () => {
   return (
-    <Stack bg={'pink.900'} p={4} display={{ md: 'none' }}>
+    <Stack bg={'#0c0e13'} p={4} display={{ md: 'none' }}>
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
@@ -140,20 +157,22 @@ const MobileNavItem = ({ label, children, href }) => {
 const NAV_ITEMS = [
   {
     label: 'About me',
-    number: '01'
+    number: '01',
+    href: '#about-me'
   },
   {
     label: 'Experience',
-    number: '02'
+    number: '02',
+    href: '#experience'
   },
   {
     label: 'Work',
-    href: '#',
+    href: '#work',
     number: '03'
   },
   {
     label: 'Contact',
-    href: '#',
+    href: '#contact',
     number: '04'
   }
 ]

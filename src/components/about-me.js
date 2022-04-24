@@ -70,17 +70,11 @@ export const AboutMe = () => {
                     as={'span'}
                     fontSize={{ base: 'md', md: '18px' }}
                     color={'pink.400'}
-                    fontFamily={'monospace'}
+                    fontFamily={'Roboto Mono'}
                   >
                     01.
                   </Text>
-                  <Heading
-                    as='h2'
-                    ps={3}
-                    pe={4}
-                    fontSize={{ base: '2xl', lg: '3xl' }}
-                    color={'white'}
-                  >
+                  <Heading as='h2' ps={3} pe={4} fontSize={'2xl'} color={'white'}>
                     About Me
                   </Heading>
                 </Flex>
@@ -134,7 +128,7 @@ export const AboutMe = () => {
 
               <List display='grid' ps={3} gridTemplateColumns={'1fr 1fr'}>
                 {myTechnologies.map((technology) => (
-                  <ListItem key={technology.id} fontSize='12px' fontFamily={'monospace'}>
+                  <ListItem key={technology.id} fontSize='12px' fontFamily={'Roboto Mono'}>
                     <ListIcon as={ArrowForwardIcon} color='pink.400' />
                     {technology.name}
                   </ListItem>
