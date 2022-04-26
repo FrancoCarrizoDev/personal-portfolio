@@ -70,7 +70,7 @@ const EXPERIENCE = [
 
 export const Experience = () => {
   return (
-    <Container maxWidth={'5xl'} pt={10} minH={'100vh'} id='experience'>
+    <Container maxWidth={'5xl'} pt={10} id='experience'>
       <Flex align={'center'} my={4}>
         <Flex align={'baseline'}>
           <Text
@@ -139,7 +139,6 @@ export const Experience = () => {
                   {experience.description.map((exp, index) => (
                     <ListItem display={'flex'} fontSize='sm' mb='2' key={`exp-desc-${index}`}>
                       <ListIcon pt='1' h='100%' as={ArrowForwardIcon} color='pink.400' />
-
                       <Text>{exp}</Text>
                     </ListItem>
                   ))}

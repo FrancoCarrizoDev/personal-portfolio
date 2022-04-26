@@ -6,7 +6,6 @@ module.exports = {
   plugins: [
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
-
     'gatsby-transformer-sharp',
     {
       resolve: '@chakra-ui/gatsby-plugin',
