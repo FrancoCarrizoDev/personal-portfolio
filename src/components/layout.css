@@ -31,6 +31,15 @@ hr{
  border-color: rgba(255, 255, 255, 0.64);
 }
 
+img {
+  -drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
 .hidden {
   opacity:0;
 }
@@ -102,3 +111,4 @@ p{
   transition: all 200ms;
   transform: scale(1.1)
 }
+

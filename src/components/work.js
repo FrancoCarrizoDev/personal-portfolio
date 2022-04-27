@@ -156,7 +156,7 @@ const MY_PROJECT = {
 
 export const Work = () => {
   return (
-    <Container maxWidth={'5xl'} id='experience' mt={10} pt={10} minH={'100vh'}>
+    <Container maxWidth={'5xl'} id='experience' mt={10} pt={10} minH={'100vh'} draggable='false'>
       <Flex align={'center'} mb={10}>
         <Flex align={'baseline'}>
           <Text
@@ -186,7 +186,8 @@ export const Work = () => {
             src='../images/back-app.png'
             alt='owlShipPhoto'
             placeholder='blurred'
-            className='work-img'
+            className='work-img selectDisable'
+            zIndex={1}
           />
         </Flex>
         <Flex direction={'column'} bg={'blackAlpha.500'} py={10} px={7}>
