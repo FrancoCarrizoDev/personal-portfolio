@@ -48,7 +48,7 @@ p{
   word-spacing: .5px
 }
 
-#main a{
+#main a:not(.work-link){
   color: #ED64A6;
   background: 
     linear-gradient(to right, #ED64A6, #ED64A6),
@@ -59,13 +59,13 @@ p{
   transition: background-size 400ms;
 }
 
-#main a:hover,
-#main a:focus {
+#main a:hover:not(.work-link),
+#main a:focus:not(.work-link) {
   background-size: 0 0.1rem, 100% 0.1rem;
   text-decoration: none !important;
 }
 
-.chakra-tabs button:focus{
+.experience-tabList button:focus{
   box-shadow: none;
   background-color: #1A202C;
   border-inline-start: 2px solid;
@@ -73,9 +73,10 @@ p{
   border-inline-start-style: solid;
   border-inline-start-color: initial;
   border-color:#ED64A6;
-  transition: all 1000ms;
+  transition: all 500ms;
   color: #ED64A6
 }
+
 
 .work-img{
   max-width: 100%;
@@ -87,5 +88,17 @@ p{
   height: 100%;
   object-fit: cover;
   border-radius: 4px;
-  filter: grayscale(100%) contrast(1) brightness(50%);
+  filter: grayscale(100%) contrast(1) brightness(40%);
+}
+
+.work-link{
+  color: white;
+  transition: all 200ms;
+}
+
+.work-link:hover{
+  
+  color: #ED64A6;
+  transition: all 200ms;
+  transform: scale(1.1)
 }

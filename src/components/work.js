@@ -1,8 +1,25 @@
-import { Box, Container, Flex, Grid, Heading, List, ListItem, Text } from '@chakra-ui/react'
+import { ArrowForwardIcon } from '@chakra-ui/icons'
+import {
+  Box,
+  Container,
+  Flex,
+  Heading,
+  List,
+  ListIcon,
+  ListItem,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+  Text,
+  Link
+} from '@chakra-ui/react'
 import { faCode, faExternalLink } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
+import { Fade } from 'react-awesome-reveal'
 
 const MY_PROJECT = {
   id: '1',
@@ -12,7 +29,27 @@ const MY_PROJECT = {
       id: '1',
       title: 'Design',
       state: 'Finished',
-      description: 'Designing the UI and UX of the application'
+      description: 'Designing the UI and UX of the application',
+      modules: [
+        {
+          id: '1',
+          title: 'Globals Components',
+          state: 'Finished',
+          description: 'Designing the UI and UX of the application'
+        },
+        {
+          id: '2',
+          title: 'Admin Panels Views',
+          state: 'Finished',
+          description: 'Designing the UI and UX of the admin panels'
+        },
+        {
+          id: '3',
+          title: 'Product Page',
+          state: 'Finished',
+          description: 'Designing the UI and UX of the login page'
+        }
+      ]
     },
     {
       id: '2',
@@ -86,19 +123,35 @@ const MY_PROJECT = {
       id: '3',
       title: 'Testing',
       state: 'Backlog',
-      description: 'Testing the application'
+      description: 'Testing the application',
+      modules: [
+        {
+          id: '1',
+          title: 'Test Module',
+          state: 'Backlog',
+          description: 'Not yet planned'
+        }
+      ]
     },
     {
       id: '4',
       title: 'Deployment',
       state: 'Backlog',
-      description: 'Deploying the application'
+      description: 'Deploying the application',
+      modules: [
+        {
+          id: '1',
+          title: 'Payment Module',
+          state: 'Backlog',
+          description: 'Not yet planned'
+        }
+      ]
     }
   ],
   name: 'OwlShip',
   description:
     'Bored of small applications like "pokedex", "to-do list" or a "calendar" I decided to make a totally dynamic e-commerce, where the categories will be dynamic and loaded giving meaning to the business.',
-  technologies: ['React', 'Node JS', 'PostgreSQL', 'AWS', 'Docker', 'Git']
+  technologies: ['Bootstrap', 'React', 'Node JS', 'Express', 'MongoDB', 'Cloudinary']
 }
 
 export const Work = () => {
@@ -115,30 +168,114 @@ export const Work = () => {
             03.
           </Text>
           <Heading as='h2' ps={3} pe={4} fontSize={'2xl'} color={'white'}>
-            Some Things I’ve Built
+            Working On Myself
           </Heading>
         </Flex>
         <hr style={{ width: '30%' }} />
       </Flex>
-      <Box position={'relative'} bg={'gray.800'} shadow={'md'} boxShadow={'lg'}>
+      <Box
+        position={'relative'}
+        h='100%'
+        bg={'blackAlpha.800'}
+        borderRadius='md'
+        shadow='md'
+        boxShadow={'lg'}
+      >
         <Flex h='100%' position={'absolute'} opacity={'.2'}>
           <StaticImage
-            src='../images/frontIndex.png'
+            src='../images/back-app.png'
             alt='owlShipPhoto'
             placeholder='blurred'
             className='work-img'
           />
         </Flex>
         <Flex direction={'column'} bg={'blackAlpha.500'} py={10} px={7}>
-          <Text fontSize={'sm'} mb={3} fontFamily={'Roboto Mono'} color={'pink.400'}>
+          <Text fontSize={'sm'} mb={4} fontFamily={'Roboto Mono'} color={'cyan.400'} zIndex={1}>
             Big Personal Project - {MY_PROJECT.state}
           </Text>
-          <Heading as='h3' fontSize={'2xl'} mb={3} color='white'>
+          <Heading as='h3' fontSize={'2xl'} mb={4} color='white' zIndex={1}>
             OwlShip
           </Heading>
-          <Text mb={3} color='white'>
+          <Text mb={5} color='white' zIndex={1}>
             {MY_PROJECT.description}
           </Text>
+          <Tabs
+            isFitted
+            isLazy
+            zIndex={1}
+            orientation={{ base: 'horizontal', md: 'vertical' }}
+            colorScheme='cyan'
+            mb={4}
+            variant='enclosed'
+            className='work-tabList'
+          >
+            <TabList borderBottom={{ base: 'none', md: '1px solid #ED64A6' }} flexWrap={'wrap'}>
+              {MY_PROJECT.projectSteps.map((projectSteps, index) => (
+                <Tab
+                  key={`exp-${index}`}
+                  _focus={{
+                    color: 'pink.400',
+                    backgroundColor: '#1A202C'
+                  }}
+                  _selected={{
+                    color: 'pink.400',
+                    borderLeft: '1px solid #ED64A6',
+                    borderTop: '1px solid #ED64A6',
+                    borderRight: '1px solid #ED64A6',
+                    borderBottom: '1px solid #ED64A6',
+                    backgroundColor: '#1A202C'
+                  }}
+                >
+                  <Text
+                    w='100%'
+                    textAlign={'start'}
+                    fontFamily={'Roboto Mono'}
+                    fontSize={'14px'}
+                    py='1'
+                  >
+                    {projectSteps.title}
+                  </Text>
+                </Tab>
+              ))}
+            </TabList>
+            <TabPanels>
+              {MY_PROJECT.projectSteps.map((projectSteps, index) => (
+                <TabPanel key={`expDesc-${index}`}>
+                  <Fade>
+                    <Flex direction={'row'} fontWeight='bold' mb='2'>
+                      <Text as={'h3'} me={'1'}>
+                        {projectSteps.title}{' '}
+                      </Text>
+                      <Text color='pink.400' fontWeight='semibold'>
+                        @{projectSteps.state}
+                      </Text>
+                    </Flex>
+                    <Text fontFamily={'Roboto Mono'} fontSize='sm' mb='5'>
+                      {projectSteps.description}
+                    </Text>
+                    <List>
+                      {projectSteps.modules.map((modules, index) => (
+                        <ListItem display={'flex'} fontSize='sm' mb='2' key={`exp-desc-${index}`}>
+                          <ListIcon pt='1' h='100%' as={ArrowForwardIcon} color='pink.400' />
+                          <Flex direction='column'>
+                            <Flex align={'center'} fontWeight='semibold'>
+                              <Text fontWeight={'medium'} me='3'>
+                                {modules.title}
+                              </Text>
+                              <Text fontFamily={'Roboto Mono'} color='pink.400'>
+                                - {modules.state}
+                              </Text>
+                            </Flex>
+                            <Text>{modules.description}</Text>
+                          </Flex>
+                        </ListItem>
+                      ))}
+                    </List>
+                  </Fade>
+                </TabPanel>
+              ))}
+            </TabPanels>
+          </Tabs>
           <List
             fontFamily={'Roboto Mono'}
             fontSize='sm'
@@ -146,16 +283,32 @@ export const Work = () => {
             flexWrap='wrap'
             justifyContent={'flex-start'}
             mb={3}
+            zIndex={1}
           >
-            {MY_PROJECT.technologies.map((tech) => (
-              <ListItem me={3} mb={3}>
+            {MY_PROJECT.technologies.map((tech, index) => (
+              <ListItem me={3} mb={3} key={`project-tech-${index}`}>
                 {tech}
               </ListItem>
             ))}
           </List>
-          <Box>
-            <FontAwesomeIcon size='lg' icon={faExternalLink} style={{ marginRight: '10px' }} />
-            <FontAwesomeIcon size='lg' icon={faCode} />
+          <Box textAlign={{ base: 'start', md: 'end' }} zIndex={999}>
+            <Link
+              href='https://github.com'
+              isExternal
+              title='Go to application'
+              me={5}
+              className='work-link'
+            >
+              <FontAwesomeIcon size='lg' icon={faExternalLink} />
+            </Link>
+            <Link
+              href='https://github.com'
+              isExternal
+              title='Go to application'
+              className='work-link'
+            >
+              <FontAwesomeIcon size='lg' icon={faCode} />
+            </Link>
           </Box>
         </Flex>
       </Box>

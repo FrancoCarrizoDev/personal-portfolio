@@ -87,8 +87,8 @@ export const Experience = () => {
         </Flex>
         <hr style={{ width: '30%' }} />
       </Flex>
-      <Tabs isLazy orientation='vertical' colorScheme='cyan' mt='10'>
-        <TabList>
+      <Tabs isLazy orientation='vertical' colorScheme='cyan' mt='10' className='experience-tabList'>
+        <TabList flexWrap={'wrap'}>
           {EXPERIENCE.map((experience, index) => (
             <Tab
               key={`exp-${index}`}
