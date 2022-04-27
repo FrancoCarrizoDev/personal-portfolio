@@ -96,6 +96,8 @@ export const Greeting = () => {
               as={'a'}
               href='#about-me'
               zIndex={0}
+              className='greeting-button'
+              _hover={{ backgroundColor: 'blackAlpha.200', color: 'pink.300' }}
             >
               <Text fontWeight={'normal'} fontSize={'md'}>
                 About me !

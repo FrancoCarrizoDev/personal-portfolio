@@ -57,7 +57,7 @@ p{
   word-spacing: .5px
 }
 
-#main a:not(.work-link){
+#main a:not(.work-link):not(.greeting-button) {
   color: #ED64A6;
   background: 
     linear-gradient(to right, #ED64A6, #ED64A6),

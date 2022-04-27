@@ -45,6 +45,7 @@ export default function WithSubnavigation() {
       bg={(scrolling && scrollTop !== 0) || isOpen ? '#0c0e13' : 'transparent'}
       transition={'all 300ms'}
       zIndex={1}
+      shadow={scrolling || scrollTop === 0 || isOpen ? 'md' : 'none'}
     >
       <ScaleFade in={scrolling || scrollTop === 0 || isOpen}>
         <Container maxWidth={'10xl'}>
