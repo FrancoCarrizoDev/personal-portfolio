@@ -4,6 +4,7 @@ import { Experience } from '../components/experience'
 import { Greeting } from '../components/greeting'
 import { Work } from '../components/work'
 import Layout from '../components/layout'
+import { Contact } from '../components/contact'
 
 const IndexPage = () => {
   return (
@@ -12,6 +13,7 @@ const IndexPage = () => {
       <AboutMe />
       <Experience />
       <Work />
+      <Contact />
     </Layout>
   )
 }

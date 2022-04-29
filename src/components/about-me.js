@@ -44,8 +44,7 @@ const myTechnologies = [
 
 export const AboutMe = () => {
   return (
-    // TODO quitar ese 100vh
-    <Container maxWidth={'5xl'} pt={{ base: 10, md: 0 }} mb={10} pb={10} id='about-me-container'>
+    <Container maxWidth={'5xl'} py={'100px'} id='about-me'>
       <Stack direction={{ base: 'column', md: 'row' }} align={'center'}>
         <Flex
           align={{ base: 'flex-start', md: 'center' }}
@@ -55,7 +54,6 @@ export const AboutMe = () => {
           flex={1}
           mb={{ base: 10, md: 0 }}
           pb={{ base: 10, md: 0 }}
-          id='about-me'
         >
           <Flex
             justify={{ base: 'center', md: 'center' }}

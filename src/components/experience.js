@@ -70,8 +70,8 @@ const EXPERIENCE = [
 
 export const Experience = () => {
   return (
-    <Container maxWidth={'5xl'} pt={10} id='experience'>
-      <Flex align={'center'} my={4}>
+    <Container maxWidth={'5xl'} py={'100px'} id='experience'>
+      <Flex align={'center'}>
         <Flex align={'baseline'}>
           <Text
             as={'span'}

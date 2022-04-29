@@ -156,7 +156,7 @@ const MY_PROJECT = {
 
 export const Work = () => {
   return (
-    <Container maxWidth={'5xl'} id='experience' mt={10} pt={10} minH={'100vh'} draggable='false'>
+    <Container maxWidth={'5xl'} py={'100px'} id='work'>
       <Flex align={'center'} mb={10}>
         <Flex align={'baseline'}>
           <Text
@@ -204,13 +204,12 @@ export const Work = () => {
             isFitted
             isLazy
             zIndex={1}
-            orientation={{ base: 'horizontal', md: 'vertical' }}
             colorScheme='cyan'
             mb={4}
             variant='enclosed'
             className='work-tabList'
           >
-            <TabList borderBottom={{ base: 'none', md: '1px solid #ED64A6' }} flexWrap={'wrap'}>
+            <TabList borderBottom={'1px solid #ED64A6'} flexWrap={'wrap'}>
               {MY_PROJECT.projectSteps.map((projectSteps, index) => (
                 <Tab
                   key={`exp-${index}`}
