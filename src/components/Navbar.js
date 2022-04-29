@@ -29,7 +29,7 @@ export default function WithSubnavigation() {
       id='navbar-container'
       bg={(scrolling && scrollTop !== 0) || isOpen ? '#0c0e13' : 'transparent'}
       transition={'all 300ms'}
-      zIndex={1}
+      zIndex={99}
       shadow={scrolling || scrollTop === 0 || isOpen ? 'md' : 'none'}
     >
       <ScaleFade in={scrolling || scrollTop === 0 || isOpen}>
@@ -80,7 +80,7 @@ export default function WithSubnavigation() {
         </Container>
       </ScaleFade>
       <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
+        <MobileNav onToggle={onToggle} />
       </Collapse>
     </Box>
   )
@@ -116,17 +116,17 @@ const DesktopNav = () => {
   )
 }
 
-const MobileNav = () => {
+const MobileNav = ({ onToggle }) => {
   return (
     <Stack bg={'#0c0e13'} p={4} display={{ md: 'none' }}>
       {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
+        <MobileNavItem key={navItem.label} {...navItem} onToggle={onToggle} />
       ))}
     </Stack>
   )
 }
 
-const MobileNavItem = ({ label, children, href }) => {
+const MobileNavItem = ({ label, href, onToggle }) => {
   return (
     <Stack spacing={4}>
       <Flex
@@ -139,7 +139,7 @@ const MobileNavItem = ({ label, children, href }) => {
           textDecoration: 'none'
         }}
       >
-        <Text fontWeight={600} color={'whiteAlpha.900'}>
+        <Text fontWeight={600} color={'whiteAlpha.900'} onClick={onToggle}>
           {label}
         </Text>
       </Flex>

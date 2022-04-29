@@ -44,13 +44,12 @@ const myTechnologies = [
 
 export const AboutMe = () => {
   return (
-    <Container maxWidth={'5xl'} py={'100px'} id='about-me'>
+    <Container maxWidth={'5xl'} py={{ base: '50px', md: '100px' }} id='about-me'>
       <Stack direction={{ base: 'column', md: 'row' }} align={'center'}>
         <Flex
           align={{ base: 'flex-start', md: 'center' }}
           justify={{ base: 'flex-start', md: 'center' }}
           w='100%'
-          pt={{ base: 10, md: 0 }}
           flex={1}
           mb={{ base: 10, md: 0 }}
           pb={{ base: 10, md: 0 }}

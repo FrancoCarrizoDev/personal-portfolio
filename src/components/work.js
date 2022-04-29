@@ -156,7 +156,7 @@ const MY_PROJECT = {
 
 export const Work = () => {
   return (
-    <Container maxWidth={'5xl'} py={'100px'} id='work'>
+    <Container maxWidth={'5xl'} py={{ base: '50px', md: '100px' }} id='work'>
       <Flex align={'center'} mb={10}>
         <Flex align={'baseline'}>
           <Text
@@ -291,7 +291,7 @@ export const Work = () => {
               </ListItem>
             ))}
           </List>
-          <Box textAlign={{ base: 'start', md: 'end' }} zIndex={999}>
+          <Box textAlign={{ base: 'start', md: 'end' }} zIndex={9}>
             <Link
               href='https://github.com'
               isExternal
