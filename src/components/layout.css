@@ -116,7 +116,7 @@ p{
   width: 40px;
   position: fixed;
   bottom: 0px;
-  left: 40px;
+  left: 17px;
   right: auto;
   z-index: 10;
 }
@@ -149,7 +149,7 @@ p{
   width: 40px;
   position: fixed;
   bottom: 0px;
-  right: 40px;
+  right: 17px;
   left: auto;
   z-index: 10;
 }

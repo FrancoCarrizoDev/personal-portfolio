@@ -187,7 +187,7 @@ export const Work = () => {
             alt='owlShipPhoto'
             placeholder='blurred'
             className='work-img selectDisable'
-            zIndex={1}
+            style={{ zIndex: '1' }}
           />
         </Flex>
         <Flex direction={'column'} bg={'blackAlpha.500'} py={10} px={7}>

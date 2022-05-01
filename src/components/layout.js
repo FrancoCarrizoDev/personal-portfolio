@@ -5,23 +5,13 @@ import * as React from 'react'
 import NavBar from './Navbar'
 import './layout.css'
 import { Fade } from 'react-awesome-reveal'
+import SEO from './seo'
 
 const Layout = ({ pageTitle, children }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <Box bgColor={'gray.900'} color='whiteAlpha.900' minH='100vh'>
-      <title>
-        {pageTitle} | {data.site.siteMetadata.title}
-      </title>
+      <SEO title='Franco Carrizo' description='My personal portfolio' />
+
       <NavBar />
       <Fade triggerOnce delay={2000}>
         <div className='line-left'>

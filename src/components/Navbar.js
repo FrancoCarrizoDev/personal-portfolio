@@ -9,7 +9,8 @@ import {
   useBreakpointValue,
   useDisclosure,
   Container,
-  ScaleFade
+  ScaleFade,
+  Icon
 } from '@chakra-ui/react'
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 import React from 'react'
@@ -48,25 +49,24 @@ export default function WithSubnavigation() {
               />
             </Flex>
             <Flex flex={{ base: 1 }} justify={{ base: 'end', md: 'start' }}>
-              <Fade>
-                <Text
-                  textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-                  fontFamily={'heading'}
-                  border={'1px'}
-                  borderColor='pink.400'
-                  borderRadius={'md'}
-                  p={1}
-                >
-                  <IconButton
-                    as={SiVisualstudiocode}
-                    color='pink.400'
-                    backgroundColor='#0c0e13'
-                    size={'xs'}
-                    _hover={{ backgroundColor: 'gray.900', transition: 'all 300ms' }}
-                    transition='all 300ms'
-                  />
-                </Text>
-              </Fade>
+              <Flex display={'flex'} align='center' mt={'5px'}>
+                <Fade>
+                  <Link
+                    textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
+                    fontFamily={'heading'}
+                    href='https://franco-carrizo.ar'
+                    title='My portfolio'
+                  >
+                    <Icon
+                      fontSize={'1.5em'}
+                      as={SiVisualstudiocode}
+                      color='pink.400'
+                      _hover={{ backgroundColor: 'gray.900', transition: 'all 300ms' }}
+                      transition='all 300ms'
+                    />
+                  </Link>
+                </Fade>
+              </Flex>
               <Flex
                 display={{ base: 'none', md: 'flex' }}
                 width='100%'
