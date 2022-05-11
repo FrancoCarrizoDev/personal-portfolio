@@ -1,4 +1,4 @@
-import { Box, List, ListIcon, ListItem, Text } from '@chakra-ui/react'
+import { Box, Link, List, ListIcon, ListItem, Text } from '@chakra-ui/react'
 import { RiInstagramLine, RiGithubLine, RiLinkedinLine } from 'react-icons/ri'
 import { useStaticQuery, graphql } from 'gatsby'
 import * as React from 'react'
@@ -17,28 +17,34 @@ const Layout = ({ pageTitle, children }) => {
         <div className='line-left'>
           <List className='ul' display={'flex'} flexDirection={'column'}>
             <ListItem margin={'5px auto'}>
-              <ListIcon
-                fontSize={'xl'}
-                as={RiInstagramLine}
-                margin={'5px auto'}
-                color={'whiteAlpha.800'}
-              ></ListIcon>
+              <Link href='https://www.instagram.com/francarrizo13/' isExternal>
+                <ListIcon
+                  fontSize={'xl'}
+                  as={RiInstagramLine}
+                  margin={'5px auto'}
+                  color={'whiteAlpha.800'}
+                ></ListIcon>
+              </Link>
             </ListItem>
             <ListItem margin={'5px auto'}>
-              <ListIcon
-                fontSize={'xl'}
-                as={RiGithubLine}
-                margin={'5px auto'}
-                color={'whiteAlpha.800'}
-              ></ListIcon>
+              <Link href='https://github.com/FrancoCarrizoDev' isExternal>
+                <ListIcon
+                  fontSize={'xl'}
+                  as={RiGithubLine}
+                  margin={'5px auto'}
+                  color={'whiteAlpha.800'}
+                ></ListIcon>
+              </Link>
             </ListItem>
             <ListItem margin={'5px auto 15px auto'}>
-              <ListIcon
-                fontSize={'xl'}
-                as={RiLinkedinLine}
-                margin={'5px auto 15px auto'}
-                color={'whiteAlpha.800'}
-              ></ListIcon>
+              <Link href='https://www.linkedin.com/in/francocarrizodev/' isExternal>
+                <ListIcon
+                  fontSize={'xl'}
+                  as={RiLinkedinLine}
+                  margin={'5px auto 15px auto'}
+                  color={'whiteAlpha.800'}
+                ></ListIcon>
+              </Link>
             </ListItem>
           </List>
         </div>

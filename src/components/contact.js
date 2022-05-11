@@ -1,4 +1,4 @@
-import { Button, Container, Flex, Heading, Text } from '@chakra-ui/react'
+import { Button, Container, Flex, Heading, Link, Text } from '@chakra-ui/react'
 import React from 'react'
 
 export const Contact = () => {
@@ -35,15 +35,20 @@ export const Contact = () => {
           size='lg'
           fontFamily={'Roboto Mono'}
           maxWidth={'xs'}
-          as={'a'}
-          href='#about-me'
+          as={'span'}
           zIndex={0}
+          cursor='pointer'
           className='greeting-button'
           _hover={{ backgroundColor: 'blackAlpha.200', color: 'pink.300' }}
         >
-          <Text fontWeight={'normal'} fontSize={'md'}>
+          <Link
+            fontWeight={'normal'}
+            fontSize={'md'}
+            isExternal
+            href='mailto:francoadrianc@gmail.com'
+          >
             Say Hello
-          </Text>
+          </Link>
         </Button>
       </Flex>
     </Container>
