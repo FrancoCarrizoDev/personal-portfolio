@@ -1,8 +1,8 @@
 {
-  "name": "mi-first-site",
+  "name": "mi-personal-portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "mi-first-site",
+  "description": "Mi personal portfolio",
   "author": "Franco Carrizo",
   "keywords": [
     "gatsby"
