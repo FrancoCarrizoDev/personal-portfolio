@@ -44,170 +44,186 @@ const myTechnologies = [
 
 export const AboutMe = () => {
 	return (
-		<Container
-			maxWidth={"5xl"}
-			py={{ base: "50px", md: "100px" }}
-			id="about-me"
-		>
-			<Stack direction={{ base: "column", md: "row" }} align={"center"}>
-				<Flex
-					align={{ base: "flex-start", md: "center" }}
-					justify={{ base: "flex-start", md: "center" }}
-					w="100%"
-					flex={1}
-					mb={{ base: 10, md: 0 }}
-					pb={{ base: 10, md: 0 }}
+		<>
+			{/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+				<path
+					fill="#6141aeb3"
+					fill-opacity="1"
+					d="M0,96L120,112C240,128,480,160,720,149.3C960,139,1200,85,1320,58.7L1440,32L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"
+				></path>
+			</svg> */}
+			<Container
+				maxWidth={"5xl"}
+				py={{ base: "50px", md: "100px" }}
+				id="about-me"
+			>
+				<Stack
+					direction={{ base: "column", md: "row" }}
+					align={"center"}
 				>
 					<Flex
-						justify={{ base: "center", md: "center" }}
-						pt={{ base: "10", md: "4" }}
-						px={"2"}
-						w={"100%"}
+						align={{ base: "flex-start", md: "center" }}
+						justify={{ base: "flex-start", md: "center" }}
+						w="100%"
+						flex={1}
+						mb={{ base: 10, md: 0 }}
+						pb={{ base: 10, md: 0 }}
 					>
 						<Flex
-							flexDir={"column"}
-							justifyContent={{ base: 0, md: "center" }}
-							maxWidth={"5xl"}
+							justify={{ base: "center", md: "center" }}
+							pt={{ base: "10", md: "4" }}
+							px={"2"}
+							w={"100%"}
 						>
-							<Flex align={"center"} mt={4}>
-								<Flex align={"baseline"}>
-									<Text
-										as={"span"}
-										fontSize={{ base: "md", md: "18px" }}
-										color={"pink.400"}
-										fontFamily={"Roboto Mono"}
-									>
-										01.
-									</Text>
-									<Heading
-										as="h2"
-										ps={3}
-										pe={4}
-										fontSize={"2xl"}
-										color={"white"}
-									>
-										About Me
-									</Heading>
+							<Flex
+								flexDir={"column"}
+								justifyContent={{ base: 0, md: "center" }}
+								maxWidth={"5xl"}
+							>
+								<Flex align={"center"} mt={4}>
+									<Flex align={"baseline"}>
+										<Text
+											as={"span"}
+											fontSize={{
+												base: "md",
+												md: "18px",
+											}}
+											color={"pink.400"}
+											fontFamily={"Roboto Mono"}
+										>
+											01.
+										</Text>
+										<Heading
+											as="h2"
+											ps={3}
+											pe={4}
+											fontSize={"2xl"}
+											color={"white"}
+										>
+											About Me
+										</Heading>
+									</Flex>
+									<hr style={{ flexGrow: "1" }} />
 								</Flex>
-								<hr style={{ flexGrow: "1" }} />
+
+								<Text
+									color={"whiteAlpha.700"}
+									mt={4}
+									maxWidth={"lg"}
+									fontWeight={"medium"}
+									fontSize={{
+										base: "14px",
+										md: "15px",
+										lg: "16px",
+										xl: "17px",
+									}}
+									as={"div"}
+									className="text-body-container"
+								>
+									<Text>
+										Hello! My name is Franco and I enjoy
+										creating solutions that live on the web.
+										My interest in web development started
+										in 2018 when I decided to try, out of
+										curiosity, to create my first website. I
+										really enjoy the road traveled, designs,
+										architectures, technologies!
+									</Text>
+									<Text>
+										Fast forward to today, and I had the
+										privilege of working on{" "}
+										<Text as="b">
+											a project for my country's
+											government{" "}
+										</Text>{" "}
+										and then for{" "}
+										<Link
+											href="https://gitcordoba.com"
+											isExternal
+											title="I worked in this company"
+										>
+											a tourism company
+										</Link>{" "}
+										(always talking about systems and
+										development). My main focus these days
+										is creating accessible and inclusive
+										products and digital experiences at{" "}
+										<Link
+											href="https://bitlogic.io"
+											isExternal
+											title="I work in this company"
+										>
+											Bitlogic
+										</Link>{" "}
+										for a variety of clients.
+									</Text>
+									<Text>
+										Also, I am{" "}
+										<Text as="b">
+											teaching front-end web development
+										</Text>{" "}
+										for 1 year as a tutor at the{" "}
+										<Link
+											href="https://www.coderhouse.com"
+											isExternal
+											title="I work in this company"
+										>
+											coderhouse academy
+										</Link>
+										.
+									</Text>
+									<Text>
+										I am a self-taught person who likes to
+										learn a lot and{" "}
+										<Text as="b">I enjoy what I do</Text>.
+									</Text>
+									<Text>
+										Here are <Text as={"b"}>some</Text>{" "}
+										technologies I've been working with
+										recently:
+									</Text>
+								</Text>
+
+								<List
+									display="grid"
+									ps={3}
+									gridTemplateColumns={"1fr 1fr"}
+								>
+									{myTechnologies.map((technology) => (
+										<ListItem
+											key={technology.id}
+											fontSize="12px"
+											fontFamily={"Roboto Mono"}
+										>
+											<ListIcon
+												as={ArrowForwardIcon}
+												color="pink.400"
+											/>
+											{technology.name}
+										</ListItem>
+									))}
+								</List>
 							</Flex>
-
-							<Text
-								color={"whiteAlpha.700"}
-								mt={4}
-								maxWidth={"lg"}
-								fontWeight={"medium"}
-								fontSize={{
-									base: "14px",
-									md: "15px",
-									lg: "16px",
-									xl: "17px",
-								}}
-								as={"div"}
-								className="text-body-container"
-							>
-								<Text>
-									Hello! My name is Franco and I enjoy
-									creating solutions that live on the web. My
-									interest in web development started in 2018
-									when I decided to try, out of curiosity, to
-									create my first website. I really enjoy the
-									road traveled, designs, architectures,
-									technologies!
-								</Text>
-								<Text>
-									Fast forward to today, and I had the
-									privilege of working on{" "}
-									<Text as="b">
-										a project for my country's government{" "}
-									</Text>{" "}
-									and then for{" "}
-									<Link
-										href="https://gitcordoba.com"
-										isExternal
-										title="I worked in this company"
-									>
-										a tourism company
-									</Link>{" "}
-									(always talking about systems and
-									development). My main focus these days is
-									creating accessible and inclusive products
-									and digital experiences at{" "}
-									<Link
-										href="https://bitlogic.io"
-										isExternal
-										title="I work in this company"
-									>
-										Bitlogic
-									</Link>{" "}
-									for a variety of clients.
-								</Text>
-								<Text>
-									Also, I am{" "}
-									<Text as="b">
-										teaching front-end web development
-									</Text>{" "}
-									for 1 year as a tutor at the{" "}
-									<Link
-										href="https://www.coderhouse.com"
-										isExternal
-										title="I work in this company"
-									>
-										coderhouse academy
-									</Link>
-									.
-								</Text>
-								<Text>
-									I am a self-taught person who likes to learn
-									a lot and{" "}
-									<Text as="b">I enjoy what I do</Text>.
-								</Text>
-								<Text>
-									Here are <Text as={"b"}>some</Text>{" "}
-									technologies I've been working with
-									recently:
-								</Text>
-							</Text>
-
-							<List
-								display="grid"
-								ps={3}
-								gridTemplateColumns={"1fr 1fr"}
-							>
-								{myTechnologies.map((technology) => (
-									<ListItem
-										key={technology.id}
-										fontSize="12px"
-										fontFamily={"Roboto Mono"}
-									>
-										<ListIcon
-											as={ArrowForwardIcon}
-											color="pink.400"
-										/>
-										{technology.name}
-									</ListItem>
-								))}
-							</List>
 						</Flex>
 					</Flex>
-				</Flex>
-				<Flex
-					flex={1}
-					justify={{ base: "center", lg: "end" }}
-					align="center"
-					style={{ margin: 0 }}
-				>
-					<StaticImage
-						src="../images/my-photo.jpg"
-						alt="My personal photo"
-						placeholder="blurred"
-						layout="fixed"
-						className="about-me-img"
-						width={300}
-						height={300}
-					/>
-				</Flex>
-			</Stack>
-		</Container>
+					<Flex
+						flex={1}
+						justify={{ base: "center", lg: "end" }}
+						align="center"
+						style={{ margin: 0 }}
+					>
+						<StaticImage
+							src="../images/my-photo.jpg"
+							alt="My personal photo"
+							placeholder="blurred"
+							layout="fixed"
+							className="about-me-img"
+							width={300}
+							height={300}
+						/>
+					</Flex>
+				</Stack>
+			</Container>
+		</>
 	);
 };

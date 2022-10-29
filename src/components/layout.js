@@ -8,7 +8,7 @@ import SEO from "./seo";
 
 const Layout = ({ pageTitle, children }) => {
 	return (
-		<Box bgColor={"white.900"} color="gray.900" minH="100vh">
+		<Box bgColor={"gray.100"} color="gray.900" minH="100vh">
 			<SEO title="Franco Carrizo" description="My personal portfolio" />
 
 			<NavBar />
@@ -78,6 +78,7 @@ const Layout = ({ pageTitle, children }) => {
 								color={"blackAlpha.800"}
 							>
 								hello@franco-carrizo.ar
+								{/* francoadrianc@gmail.com */}
 							</Text>
 						</ListItem>
 					</List>

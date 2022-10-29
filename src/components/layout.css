@@ -169,6 +169,7 @@ p{
 
 #float-label-email{
   transform: rotate(90deg);
+  white-space: nowrap;
 }
 @media screen and (max-width: 1200px) {
   .line-left, .line-right{
