@@ -28,11 +28,7 @@ export default function WithSubnavigation() {
 			pos="fixed"
 			w={"100%"}
 			id="navbar-container"
-			bg={
-				(scrolling && scrollTop !== 0) || isOpen
-					? "#0c0e13"
-					: "transparent"
-			}
+			bg={isOpen ? "blackAlpha.900" : "white"}
 			transition={"all 300ms"}
 			zIndex={99}
 			shadow={scrolling || scrollTop === 0 || isOpen ? "md" : "none"}
@@ -123,8 +119,8 @@ const DesktopNav = () => {
 					>
 						<Text
 							fontSize={"sm"}
-							fontFamily={"Roboto Mono"}
-							color={"pink.300"}
+							fontFamily={"heading"}
+							color={"pink.400"}
 							me={1}
 						>
 							{navItem.number}.
@@ -134,7 +130,7 @@ const DesktopNav = () => {
 							href={navItem.href ?? "#"}
 							fontSize={"sm"}
 							fontWeight={500}
-							fontFamily={"Roboto Mono"}
+							fontFamily={"heading"}
 							color={"black"}
 							_hover={{
 								color: "pink.300",
@@ -151,7 +147,7 @@ const DesktopNav = () => {
 
 const MobileNav = ({ onToggle }) => {
 	return (
-		<Stack bg={"blackAlpha.800"} p={4} display={{ md: "none" }}>
+		<Stack bg={"blackAlpha.900"} p={4} display={{ md: "none" }}>
 			{NAV_ITEMS.map((navItem) => (
 				<MobileNavItem
 					key={navItem.label}

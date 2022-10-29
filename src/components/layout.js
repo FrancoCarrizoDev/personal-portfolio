@@ -1,6 +1,5 @@
 import { Box, Link, List, ListIcon, ListItem, Text } from "@chakra-ui/react";
 import { RiInstagramLine, RiGithubLine, RiLinkedinLine } from "react-icons/ri";
-import { useStaticQuery, graphql } from "gatsby";
 import * as React from "react";
 import NavBar from "./Navbar";
 import "./layout.css";
@@ -29,7 +28,7 @@ const Layout = ({ pageTitle, children }) => {
 									fontSize={"xl"}
 									as={RiInstagramLine}
 									margin={"5px auto"}
-									color={"whiteAlpha.800"}
+									color={"blackAlpha.800"}
 								></ListIcon>
 							</Link>
 						</ListItem>
@@ -42,7 +41,7 @@ const Layout = ({ pageTitle, children }) => {
 									fontSize={"xl"}
 									as={RiGithubLine}
 									margin={"5px auto"}
-									color={"whiteAlpha.800"}
+									color={"blackAlpha.800"}
 								></ListIcon>
 							</Link>
 						</ListItem>
@@ -55,7 +54,7 @@ const Layout = ({ pageTitle, children }) => {
 									fontSize={"xl"}
 									as={RiLinkedinLine}
 									margin={"5px auto 15px auto"}
-									color={"whiteAlpha.800"}
+									color={"blackAlpha.800"}
 								></ListIcon>
 							</Link>
 						</ListItem>
@@ -76,9 +75,9 @@ const Layout = ({ pageTitle, children }) => {
 								id="float-label-email"
 								display={"flex"}
 								marginBottom={"200px"}
-								color={"whiteAlpha.800"}
+								color={"blackAlpha.800"}
 							>
-								francoadrianc@gmail.com
+								hello@franco-carrizo.ar
 							</Text>
 						</ListItem>
 					</List>
