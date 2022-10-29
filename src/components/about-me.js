@@ -1,4 +1,5 @@
 import {
+	Box,
 	Container,
 	Flex,
 	Heading,
@@ -44,19 +45,8 @@ const myTechnologies = [
 
 export const AboutMe = () => {
 	return (
-		<>
-			{/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-				<path
-					fill="#6141aeb3"
-					fill-opacity="1"
-					d="M0,96L120,112C240,128,480,160,720,149.3C960,139,1200,85,1320,58.7L1440,32L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"
-				></path>
-			</svg> */}
-			<Container
-				maxWidth={"5xl"}
-				py={{ base: "50px", md: "100px" }}
-				id="about-me"
-			>
+		<Box id="about-me" position={"relative"} minH="100vh">
+			<Container maxWidth={"5xl"} py={{ base: "50px", md: "100px" }}>
 				<Stack
 					direction={{ base: "column", md: "row" }}
 					align={"center"}
@@ -98,7 +88,7 @@ export const AboutMe = () => {
 											ps={3}
 											pe={4}
 											fontSize={"2xl"}
-											color={"white"}
+											color="gray.700"
 										>
 											About Me
 										</Heading>
@@ -107,7 +97,6 @@ export const AboutMe = () => {
 								</Flex>
 
 								<Text
-									color={"whiteAlpha.700"}
 									mt={4}
 									maxWidth={"lg"}
 									fontWeight={"medium"}
@@ -115,10 +104,10 @@ export const AboutMe = () => {
 										base: "14px",
 										md: "15px",
 										lg: "16px",
-										xl: "17px",
 									}}
 									as={"div"}
 									className="text-body-container"
+									color={"gray.700"}
 								>
 									<Text>
 										Hello! My name is Franco and I enjoy
@@ -224,6 +213,6 @@ export const AboutMe = () => {
 					</Flex>
 				</Stack>
 			</Container>
-		</>
+		</Box>
 	);
 };
