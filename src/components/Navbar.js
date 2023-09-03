@@ -198,13 +198,8 @@ const NAV_ITEMS = [
 		href: "#experience",
 	},
 	{
-		label: "Work",
-		href: "#work",
-		number: "03",
-	},
-	{
 		label: "Contact",
 		href: "#contact",
-		number: "04",
+		number: "03",
 	},
 ];

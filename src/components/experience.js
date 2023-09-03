@@ -34,8 +34,21 @@ const EXPERIENCE = [
 		company: "Coderhouse",
 		href: "https://www.coderhouse.com/",
 		companyDesc: "Software development teaching company",
-		job: "Front End Teacher",
-		date: "Jun 2021 - Present",
+		job: "FullStack Teacher",
+		date: "Jun 2023 - Present",
+		description: [
+			"Design and develop course materials, including syllabi, lesson plans, and assignments, tailored to the online learning environment.",
+			"Deliver live classes, host webinars, and moderate online discussions to teach course topics effectively.",
+			"Design and administer quizzes, exams, and assessments to evaluate students' comprehension and progress.",
+			"Provide timely and constructive feedback on assignments, discussions, and assessments to help students improve."
+		],
+	},
+	{
+		company: "Coderhouse",
+		href: "https://www.coderhouse.com/",
+		companyDesc: "Software development teaching company",
+		job: "Front End Online Tutor",
+		date: "Jun 2021 - Jun 2023",
 		description: [
 			"Participate in live classes with students, adding from our work experience and answering queries in the chat.",
 			"Answer queries outside of class, correct assignments, take attendance and monitor the progress of assigned students.",
@@ -105,6 +118,7 @@ export const Experience = () => {
 				className="experience-tabList"
 				variant={"line"}
 				shadow="md"
+				backgroundColor="whiteAlpha.50"
 			>
 				<TabList flexWrap={"wrap"}>
 					{EXPERIENCE.map((experience, index) => (

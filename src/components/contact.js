@@ -12,7 +12,7 @@ export const Contact = () => {
 						color={"pink.400"}
 						fontFamily={"Roboto Mono"}
 					>
-						04.
+						03.
 					</Text>
 					<Heading
 						as="h2"
@@ -41,10 +41,7 @@ export const Contact = () => {
 					maxW={"lg"}
 					mt={10}
 				>
-					Although I’m not currently looking for any new
-					opportunities, my inbox is always open. Whether you have a
-					question or just want to say hi, I’ll try my best to get
-					back to you!
+					I am currently looking for new opportunities, my inbox is open. If you have any questions or just want to say hi, I'll do my best to answer you!
 				</Text>
 				<Button
 					colorScheme="pink"

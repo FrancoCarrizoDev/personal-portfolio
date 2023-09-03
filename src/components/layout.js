@@ -8,7 +8,7 @@ import SEO from "./seo";
 
 const Layout = ({ pageTitle, children }) => {
 	return (
-		<Box bgColor={"gray.100"} color="gray.900" minH="100vh">
+		<Box bgColor={"white"} color="gray.900" minH="100vh" id="hola">
 			<SEO title="Franco Carrizo" description="My personal portfolio" />
 
 			<NavBar />
