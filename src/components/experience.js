@@ -68,15 +68,16 @@ const EXPERIENCE = [
 		],
 	},
 	{
-		company: "Argentinian State",
+		company: "Freelancer Sports Events Company",
 		href: "#",
 		companyDesc: "Government",
 		job: "Software Developer",
-		date: "Jan 2017 - Dec 2017",
+		date: "Nov 2019 - Jun 2020",
 		description: [
-			"My first job was to create views and screens for an ERP system financed by the Argentine state.",
-			"Develop and maintain stored procedures in MS SQL.",
-			"The technology to develop the desktop application was C#.",
+			"Carry out discovery with the client.",
+			"Analyze and refine use cases.",
+			"Develop client requirements.",
+			"Implement application deployment.",
 		],
 	},
 ];
