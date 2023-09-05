@@ -35,7 +35,7 @@ const EXPERIENCE = [
 		href: "https://www.coderhouse.com/",
 		companyDesc: "Software development teaching company",
 		job: "FullStack Teacher",
-		date: "Jun 2023 - Present",
+		date: "Aug 2023 - Present",
 		description: [
 			"Design and develop course materials, including syllabi, lesson plans, and assignments, tailored to the online learning environment.",
 			"Deliver live classes, host webinars, and moderate online discussions to teach course topics effectively.",
@@ -60,7 +60,7 @@ const EXPERIENCE = [
 		href: "https://gitcordoba.com/",
 		companyDesc: "Tourist Company",
 		job: "Software Developer",
-		date: "Oct 2019 - May 2021",
+		date: "Aug 2020 - May 2021",
 		description: [
 			"Development, maintenance and monitoring of the airline system, including B2B and B2C clients.",
 			"Implementation of a payment gateway for the collection of tickets or packages sold.",
